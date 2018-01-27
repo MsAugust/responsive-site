@@ -1,0 +1,171 @@
+@charset "UTF-8";
+@import "compass";
+@import url(https://fonts.googleapis.com/css?family=Abel);
+
+// font
+$baseFontFamily :"游ゴシック", YuGothic, "メイリオ",Verdana, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+.abel {
+  font-family: 'Abel', sans-serif;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+
+// colors
+$baseColor: #fdfcf6;
+$subColor: #e3e3e3;
+$keyColor: #93B11D;
+$fontColor: #4c4c4c;
+
+/* Base
+------------------------------------------------------------*/
+html { font-size: 62.5%; }
+
+body {
+  color: $fontColor;
+  font-size:1.6rem;
+  font-family: $baseFontFamily;
+  line-height: 1.6em;
+  background-color: $baseColor;
+}
+
+a {
+//  @include link-colors($keyColor, darken($keyColor, 10%), lighten($keyColor, 5%), darken($keyColor, 10%));
+  text-decoration: none;
+}
+
+
+/* Header
+------------------------------------------------------------*/
+header {
+        position: relative;
+    img {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+    }
+    .title {
+        color: #fff;
+        font-size: 6.8rem;
+        font-weight: bold;
+        position: absolute;
+        top: 45%;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        text-align: center;
+    }
+}
+
+// mobile
+@media (max-width: 768px) {
+    header {
+        img {
+            width: 100%;
+            height: 250px;
+        }
+        .title {
+            font-size: 3.2rem;
+        }
+    }
+}
+
+/* Main
+------------------------------------------------------------*/
+main {
+    padding: 15px;
+    h2 {
+        color: $keyColor;
+        text-align: center;
+        font-size: 2.6rem;
+        font-weight: bold;
+        margin: 20px auto;
+    }
+    .container {
+        @include display-flex;
+        justify-content: space-between;
+        @include flex-direction(row);
+        .box {
+            background-color: $subColor;
+            width: 32%;
+            padding: 20px;
+            margin: 10px;
+            .box-title {
+                color: $keyColor;
+                text-align: center;
+                margin-bottom: 20px;
+                font-size: 2.0rem;
+            }
+            .box-text {
+                
+            }
+        }
+    }
+}
+
+// mobile
+@media (max-width: 768px) {
+    main {
+        .container {
+            @include flex-direction(column);
+            justify-content: space-between;
+            .box {
+                @include flex(1);
+                width: 90%;
+                margin: 10px auto;
+            }
+        }
+    }
+}
+
+/* Footer
+------------------------------------------------------------*/
+footer {
+    @include box-sizing(border-box);
+    width: 100%;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: $subColor;
+    text-align: center;
+    .button {
+        width: 130px;
+        padding: 10px;
+        margin: 10px auto 30px;
+        border-style: solid;
+        background-color: $keyColor;
+        color: #fff;
+        @include border-radius(4px);
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        &:hover {
+            background-color: darken($keyColor, 10%);
+        }
+    }
+}
+
+// mobile
+@media (max-width: 768px) {
+    footer {
+        .button {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 250px;
+            padding: 10px;
+            margin: 10px auto;
+            border-style: solid;
+            background-color: $keyColor;
+            color: #fff;
+            @include border-radius(4px);
+            &:hover {
+                background-color: $keyColor;
+            }
+        }
+    }
+}
+
+
+
+
+
