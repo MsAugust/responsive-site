@@ -124,13 +124,13 @@ footer {
     @include box-sizing(border-box);
     width: 100%;
     margin-top: 30px;
-    padding: 20px;
+    padding: 50px 20px 20px;
     background-color: $subColor;
     text-align: center;
     .button {
         width: 130px;
         padding: 10px;
-        margin: 10px auto 30px;
+        margin: 10px auto 50px;
         border-style: solid;
         background-color: $keyColor;
         color: #fff;
@@ -147,13 +147,14 @@ footer {
 // mobile
 @media (max-width: 768px) {
     footer {
+        padding: 30px 20px 20px;
         .button {
             display: block;
             margin-left: auto;
             margin-right: auto;
             width: 250px;
             padding: 10px;
-            margin: 10px auto;
+            margin: 10px auto 30px;
             border-style: solid;
             background-color: $keyColor;
             color: #fff;
